@@ -82,5 +82,5 @@ db.user_responses.id.readable = db.user_responses.id.writable = False
 ##--------------------
 
 db.define_table('story',
-                Field('user_id', 'reference')
+                Field('user_id',)
                 )

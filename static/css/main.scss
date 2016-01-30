@@ -1,0 +1,196 @@
+/* VARIABLES */
+$white: #fff;
+$black: #111111;
+$navy: #001f3f;
+$blue: #0074D9;
+$aqua: #7FDBFF;
+$teal: #39CCCC;
+$olive: #3D9970;
+$green: #81ba3b;
+$lime: #01FF70;
+$yellow: #FFDC00;
+$orange: #FF851B;
+$red: #FF4136;
+$maroon: #85144b;
+$fuchsia: #F012BE;
+$purple: #B10DC9;
+$gray: #AAAAAA;
+$silver: #DDDDDD;
+
+$fb-blue: #3b5998;
+$google-red: #D50F25;
+
+/* ======= */
+
+
+/* MIXINS */
+@mixin transition {
+    -webkit-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -moz-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -o-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}
+/* ======= */
+
+
+/* IMPORTS */
+@import 'fontawesome/font-awesome.scss';
+/* ======= */
+
+/* MAIN STYLES */
+body, * {
+	padding: 0;
+	margin:0;
+	font-family: 'Helvetica';
+}
+body {
+	background-color:$white;
+	color: $black;
+}
+a:not(.noformat), a:visited:not(.noformat) {
+	color:darken($gray, 10%);
+	text-decoration:none;
+	@include transition;
+}
+.noformat {
+	color:$black;
+	text-decoration:none;
+}
+a:not(.noformat):hover {
+	color:$black;
+}
+.button {
+	@include transition;
+	box-sizing: border-box;
+	padding:1em;
+	margin:.5em;
+	background-color:$silver;
+	text-align:center;
+	display: inline;
+	border-radius: 5px;
+	cursor:pointer;
+}
+.button:hover {
+	background-color: darken($silver, 2%);
+}
+.v-center {
+	display: table-cell;
+	vertical-align: middle;
+	margin:0 auto;
+}
+.v-center-container {
+	display:table;
+	width:100%;
+}
+.h-center {
+	text-align: center;
+}
+.small-text {
+	font-style: italic;
+	color:$gray;
+	font-size: .9em;
+}
+.thin-text {
+	width:80%;
+}
+.button-bottom {
+	position:absolute;
+	border-radius: 0;
+	bottom:0;
+	margin:0;
+	display:block;
+	width:100%;
+	text-align: center;
+	text-transform: uppercase;
+	padding:1.5em 0;
+}
+.button-disabled {
+	cursor:not-allowed;
+	pointer-events: none;
+	background-color: $silver;
+	color:$gray;
+}
+.button-active {
+	background-color: $green;
+	color:$white;
+}
+.button-active:hover {
+	background-color: darken($green, 10%)
+}
+.bg-img {
+	height:45vh;
+}
+input {
+	display: block;
+	text-align: center;
+	@inlude transition100ms();
+	margin: 0 auto;
+	padding:1.2em 1em;
+	border-radius: 5px;
+	background-color:lighten($silver, 5%);
+	border:0;
+	width: 70%;
+	font-family: sans-serif;
+	font-size: 14px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+}
+input:focus {
+	background-color:$silver;
+}
+textarea, input { outline: none; }
+
+/* CUSTOM STYLES */
+.facebook {
+	background-color:$fb-blue;
+	color:$white;
+}
+.facebook:hover {
+	background-color:lighten($fb-blue, 10%);
+}
+.google {
+	background-color:$google-red;
+	color:$white;
+}
+.google:hover {
+	background-color:lighten($google-red, 10%);
+}
+
+.bg-img {
+	font-size: 1.5em;
+    background: linear-gradient( rgba(255, 255, 255, .2), 
+    	rgba(255, 255, 255, 1)), 
+    url('http://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg'); 
+    background-position:center center;
+    background-size: cover; 
+    repeat-style:no-repeat;
+}
+.subtext {
+	text-transform: uppercase;
+	color:$black;
+	opacity:.5
+}
+.float-right {
+	float:right;
+}
+.float-left {
+	float:left;
+}
+nav {
+	background-color: $green;
+}
+nav > a {
+	padding:1em;
+	font-size:1.5em;
+	display:absolute;
+}
+nav a, nav a i, nav h1 {
+	color: darken($green, 16%);
+}
+nav a:hover i {
+	color: $black;
+}
+h1, h2 {
+	text-transform:capitalize;
+}

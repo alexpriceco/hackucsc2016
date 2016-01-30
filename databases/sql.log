@@ -230,3 +230,23 @@ success!
 success!
 success!
 success!
+success!
+success!
+success!
+success!
+timestamp: 2016-01-30T13:58:58.786996
+CREATE TABLE story(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
