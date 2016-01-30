@@ -87,3 +87,4 @@ success!
 timestamp: 2016-01-29T20:29:15.868698
 ALTER TABLE experiences ADD kind CHAR(512);
 success!
+success!
