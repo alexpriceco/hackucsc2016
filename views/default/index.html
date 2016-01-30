@@ -3,8 +3,8 @@
 
 <head>
     <title>Our Walmart - Login</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/animate.css')}}">
 </head>
 
 <body>
@@ -36,10 +36,10 @@
            <input id="username" placeholder="phone # or email" type="text" />
            <br>
            <div class="small-text">Use a phone number or email address to log in. We store language information and chats using info.</div>
-
+           <a href="{{=URL('views','default/lessons.html')}}">quicklink</a>
         </div>
 
-        <a href="lessons.html"><div class="button button-full button-bottom button-disabled"> <!-- if input has text, then remove button-disabled and add button-active -->
+        <a href="{{=URL('views','default/lessons.html')}}"><div class="button button-full button-bottom button-disabled"> <!-- if input has text, then remove button-disabled and add button-active -->
             <span>login</span>&nbsp;<i class="fa fa-chevron-right"></i>
         </div></a>
         </div>
