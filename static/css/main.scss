@@ -6,7 +6,7 @@ $blue: #0074D9;
 $aqua: #7FDBFF;
 $teal: #39CCCC;
 $olive: #3D9970;
-$green: #9AC26F;
+$green: #81ba3b;
 $lime: #01FF70;
 $yellow: #FFDC00;
 $orange: #FF851B;
@@ -47,12 +47,16 @@ body {
 	background-color:$white;
 	color: $black;
 }
-a, a:visited {
+a:not(.noformat), a:visited:not(.noformat) {
 	color:darken($gray, 10%);
 	text-decoration:none;
 	@include transition;
 }
-a:hover {
+.noformat {
+	color:$black;
+	text-decoration:none;
+}
+a:not(.noformat):hover {
 	color:$black;
 }
 .button {
@@ -85,6 +89,9 @@ a:hover {
 	font-style: italic;
 	color:$gray;
 	font-size: .9em;
+}
+.thin-text {
+	width:80%;
 }
 .button-bottom {
 	position:absolute;
@@ -170,8 +177,20 @@ textarea, input { outline: none; }
 .float-left {
 	float:left;
 }
-nav a {
+nav {
+	background-color: $green;
+}
+nav > a {
 	padding:1em;
 	font-size:1.5em;
 	display:absolute;
+}
+nav a, nav a i, nav h1 {
+	color: darken($green, 16%);
+}
+nav a:hover i {
+	color: $black;
+}
+h1, h2 {
+	text-transform:capitalize;
 }
