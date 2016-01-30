@@ -57,7 +57,7 @@ db.define_table('points',
 
 db.define_table('experiences',
                 Field('user_id', 'reference users' ),
-                Field('kind', label='type', requires=IS_IN_SET(['Discrimination', 'Workplace_Issue', 'Wage', 'Safety',
+                Field('kind', label='Type of incident', requires=IS_IN_SET(['Discrimination', 'Workplace_Issue', 'Wage', 'Safety',
                                                   'Health', 'Protection', 'Wage/hours/scheduling' ]), ),
 
                 Field('story', label='Your Story', type='string'),
@@ -82,5 +82,5 @@ db.user_responses.id.readable = db.user_responses.id.writable = False
 ##--------------------
 
 db.define_table('story',
-                Field('user_id', 'reference')
+                Field('user_id', 'reference users'),
                 )
