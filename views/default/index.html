@@ -1,70 +1,63 @@
-{{if auth.user_id is None:}}
+<!DOCTYPE html>
 
+<head>
+    <title>Our Walmart - Login</title>
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/animate.css')}}">
+</head>
 
-<h1>Find other people</h1>
+<body>
 
-<div id="main_login">
-{{=A('Sign Up', _class='btn btn-warning', _href=URL('default', 'user', args=['register']))}}
-{{=A('Sign In', _class='btn btn-success', _href=URL('default', 'user', args=['login']))}}
-</div>
+    <section class="bg-img v-center-container">
+       <div class="h-center v-center">
+            <span class="subtext">Join a community of</span>
+            <h1 style="font-size:2em;text-transform:uppercase">over 500,000</h1>
+            <span class="subtext">fellow employees.</span>
+        </div>
+    </section>
 
+    <section class="signup v-center-container" style="min-height:40vh;">
+        <div class="v-center">
+        <div class="v-center-container">
+        <div class="v-center h-center">
+            <div class="button facebook">&nbsp;&nbsp;&nbsp;<i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;</div>
+            <div class="button google">&nbsp;&nbsp;&nbsp;<i class="fa fa-google"></i>&nbsp;&nbsp;&nbsp;</div>
+            <br><br><br>
+            <div class="small-text">Sign in using Facebook or Google - we care about your anonymity, and don't collect personal information.</div>
+        </div>
+        </div>
 
-{{block header}}
-<header class="container-fluid background">
-    <div class="jumbotron text-center">
-    {{if response.title:}}
-        <h1>{{=response.title}}
-            <small>{{=response.subtitle or ''}}</small></h1>
-    {{pass}}
-    </div>
-</header>
-{{end}}
+        <br><br>
+        <hr>
+        <br>
 
-{{if 'message' in globals():}}
-<h2>{{=message}}</h2>
-<p class="lead">{{=T('How did you get here?')}}</p>
-<ol>
-    <li>{{=T('You are successfully running web2py')}}</li>
-    <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
-    <li>{{=XML(T('Which called the function %s located in the file %s',
-    (A(request.function+'()',_href='#'),
-    A('web2py/applications/%(application)s/controllers/%(controller)s.py' % request,
-    _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
-    <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
-    A('web2py/applications/%(application)s/views/%(controller)s/index.html' % request,
-    _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
-    <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
-</ol>
-{{elif 'content' in globals():}}
-{{=content}}
-{{pass}}
-{{else:}}
+        <div class="h-center">
+           <input id="username" placeholder="phone # or email" type="text" />
+           <br>
+           <div class="small-text">Use a phone number or email address to log in. We store language information and chats using info.</div>
+           <a href="{{=URL('views','default/lessons.html')}}">quicklink</a>
+        </div>
 
+        <a href="{{=URL('views','default/lessons.html')}}"><div class="button button-full button-bottom button-disabled"> <!-- if input has text, then remove button-disabled and add button-active -->
+            <span>login</span>&nbsp;<i class="fa fa-chevron-right"></i>
+        </div></a>
+        </div>
+    </section>
+</body>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#username').keypress(function() {
+          if ($('#username').val() != '') {
+            console.log("has content");
+          }
+        })
+    });
+</script>
 
-<h1>Tells us about you</h1>
+</html>
 
-{{=form}}
-
-{{pass}}
-
-{{block right_sidebar}}
-<div class="panel panel-info">
-    <div class="panel-heading"><h3 class="panel-title"><a class="btn-block"
-                                                          href="{{=URL('admin','default','index')}}">
-        <i class="glyphicon glyphicon-cog"></i>
-    {{=T("admin")}}
-    </a></h3></div>
-    <div class="panel-body">
-    {{=T("Don't know what to do?")}}
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">{{=A(T("Online examples"), _href=URL('examples','default','index'))}}</li>
-        <li class="list-group-item"><a href="http://web2py.com">web2py.com</a></li>
-        <li class="list-group-item"><a href="http://web2py.com/book">{{=T('Documentation')}}</a></li>
-    </ul>
-</div>
-{{end}}
-
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,12 +146,6 @@
     }
 </script>
 
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
@@ -167,3 +154,4 @@
 
 </body>
 </html>
+-->
