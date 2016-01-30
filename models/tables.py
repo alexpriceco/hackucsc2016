@@ -5,7 +5,8 @@ db.define_table('users',
                 Field('preferred_named', db.auth_user, default=auth.user_id),
                 Field('photo_id', db.auth_user, default=auth.user_id),
                 Field('karma_points', db.auth_user, default=0),
-                Field('lessons_competed', db.auth_user, default=0)
+                Field('admin_prefix', db.auth_user, default=0),
+                Field('lessons_completed', db.auth_user, default=0)
 )
 
 db.users.id.readable = db.users.id.writable = False
