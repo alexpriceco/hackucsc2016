@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.271712
+=======
+timestamp: 2016-01-29T20:14:34.689808
+>>>>>>> backend
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -10,21 +14,33 @@ CREATE TABLE auth_user(
     registration_id CHAR(512)
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.552034
+=======
+timestamp: 2016-01-29T20:14:34.691733
+>>>>>>> backend
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.662656
+=======
+timestamp: 2016-01-29T20:14:34.693452
+>>>>>>> backend
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.762044
+=======
+timestamp: 2016-01-29T20:14:34.696028
+>>>>>>> backend
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
@@ -33,7 +49,11 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.800867
+=======
+timestamp: 2016-01-29T20:14:34.698429
+>>>>>>> backend
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -43,7 +63,11 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.826467
+=======
+timestamp: 2016-01-29T20:14:34.700662
+>>>>>>> backend
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -53,9 +77,197 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+<<<<<<< HEAD
 timestamp: 2016-01-29T19:18:31.979057
 CREATE TABLE users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+=======
+timestamp: 2016-01-29T20:14:34.713611
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    preferred_named INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    photo_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    karma_points INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    lessons_competed INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-01-29T20:15:07.869418
+CREATE TABLE points(
+    id INTEGER PRIMARY KEY AUTOINCREMENT
+);
+success!
+timestamp: 2016-01-29T20:15:49.521806
+CREATE TABLE experiences(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users (id) ON DELETE CASCADE  ,
+    positive CHAR(512),
+    negative CHAR(512),
+    story CHAR(512)
+);
+success!
+timestamp: 2016-01-29T20:15:49.531676
+CREATE TABLE responses(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    q1 CHAR(512),
+    qn CHAR(512)
+);
+success!
+timestamp: 2016-01-29T20:29:15.868698
+ALTER TABLE experiences ADD kind CHAR(512);
+success!
+success!
+timestamp: 2016-01-29T22:54:46.182892
+ALTER TABLE users ADD admin_prefix INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+timestamp: 2016-01-29T22:54:46.184916
+ALTER TABLE users ADD lessons_completed INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ;
+success!
+success!
+timestamp: 2016-01-29T22:54:46.193425
+CREATE TABLE user_responses(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users (id) ON DELETE CASCADE  ,
+    q1 CHAR(512),
+    qn CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-01-30T10:34:24.684385
+CREATE TABLE textblob(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    mytext TEXT
+);
+success!
+timestamp: 2016-01-30T10:44:41.951226
+CREATE TABLE people(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-01-30T10:44:41.958759
+CREATE TABLE messages(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user0 INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    user1 INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    sender INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    msg_time TIMESTAMP,
+    msg_id TEXT
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-01-30T12:54:49.466717
+CREATE TABLE story(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users (id) ON DELETE CASCADE  
+>>>>>>> backend
 );
 success!
