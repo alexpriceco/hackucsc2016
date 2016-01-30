@@ -230,13 +230,3 @@ success!
 success!
 success!
 success!
-success!
-success!
-success!
-success!
-timestamp: 2016-01-30T12:54:49.466717
-CREATE TABLE story(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES users (id) ON DELETE CASCADE  
-);
-success!
