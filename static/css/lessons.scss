@@ -1,0 +1,18 @@
+@import "main.scss";
+
+.lesson-number, .lesson-info {
+	display:inline-block;
+}
+.lesson {
+	h3 {
+		.lesson-number {
+			color:darken($gray, 20%);
+		}
+		display:inline-block;
+		padding:1em 0;
+	}
+	padding:2em;
+}
+.lesson {
+	background-image:linear-gradient(to right, #eee, #eee 2%, #fff 2%, #fff 85%);
+}
