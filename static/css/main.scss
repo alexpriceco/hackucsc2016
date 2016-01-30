@@ -1,0 +1,26 @@
+/* VARIABLES */
+$white: #fff;
+$black: #111;
+/* ======= */
+
+
+/* MIXINS */
+@mixin transition100ms() {
+    -webkit-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -moz-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -o-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}	
+/* ======= */
+
+
+/* IMPORTS */
+//@import 'fontawesome/font-awesome.scss';
+/* ======= */
+
+/* MAIN STYLES */
+body {
+	background-color:$white;
+	color: $black;
+	font-family: 'Helvetica';
+}
