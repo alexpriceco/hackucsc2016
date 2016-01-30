@@ -44,6 +44,15 @@
         </div>
     </section>
 </body>
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#username').keypress(function() {
+          if ($('#username').val() != '') {
+            console.log("has content");
+          }
+        })
+    });
+</script>
 
 </html>

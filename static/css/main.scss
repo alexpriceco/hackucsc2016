@@ -48,8 +48,12 @@ body {
 	color: $black;
 }
 a, a:visited {
-	color:$gray;
+	color:darken($gray, 10%);
 	text-decoration:none;
+	@include transition;
+}
+a:hover {
+	color:$black;
 }
 .button {
 	@include transition;
@@ -64,12 +68,6 @@ a, a:visited {
 }
 .button:hover {
 	background-color: darken($silver, 2%);
-}
-.button-small {
-	text-transform: uppercase;
-	color:darken($gray, 20%);
-	padding: .5em .8em;
-	margin: 0;
 }
 .v-center {
 	display: table-cell;
