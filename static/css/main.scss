@@ -1,6 +1,25 @@
 /* VARIABLES */
 $white: #fff;
-$black: #111;
+$black: #111111;
+$navy: #001f3f;
+$blue: #0074D9;
+$aqua: #7FDBFF;
+$teal: #39CCCC;
+$olive: #3D9970;
+$green: #2ECC40;
+$lime: #01FF70;
+$yellow: #FFDC00;
+$orange: #FF851B;
+$red: #FF4136;
+$maroon: #85144b;
+$fuchsia: #F012BE;
+$purple: #B10DC9;
+$gray: #AAAAAA;
+$silver: #DDDDDD;
+
+$fb-blue: #3b5998;
+$google-red: #D50F25;
+
 /* ======= */
 
 
@@ -19,8 +38,99 @@ $black: #111;
 /* ======= */
 
 /* MAIN STYLES */
+body, * {
+	padding: 0;
+	margin:0;
+	font-family: 'Helvetica';
+}
 body {
 	background-color:$white;
 	color: $black;
-	font-family: 'Helvetica';
+}
+.button {
+	box-sizing: border-box;
+	padding:1em;
+	margin:.5em;
+	background-color:$silver;
+	text-align:center;
+	display: inline;
+	border-radius: 5px;
+}
+.v-center {
+	display: table-cell;
+	vertical-align: middle;
+	margin:0 auto;
+}
+.v-center-container {
+	display:table;
+	width:100%;
+}
+.h-center {
+	text-align: center;
+}
+.small-text {
+	font-style: italic;
+	color:$gray;
+	font-size: .9em;
+}
+.button-bottom {
+	position:absolute;
+	border-radius: 0;
+	bottom:0;
+	margin:0;
+	display:block;
+	width:100%;
+	text-align: center;
+	text-transform: uppercase;
+	padding:1.5em 0;
+}
+.button-disabled {
+	cursor:not-allowed;
+	background-color: $silver;
+	color:$gray;
+}
+.button-active {
+	background-color: $olive;
+}
+.bg-img {
+	height:50vh;
+}
+input {
+	display: block;
+	@inlude transition100ms();
+	margin: 0 auto;
+	padding:1em;
+	border-radius: 5px;
+	background-color:lighten($silver, 5%);
+	border:0;
+	width: 70%;
+	font-family: sans-serif;
+	font-size: 14px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+}
+input:focus {
+	background-color:$silver;
+}
+textarea, input { outline: none; }
+
+/* CUSTOM STYLES */
+.facebook {
+	background-color:$fb-blue;
+	color:$white;
+}
+.google {
+	background-color:$google-red;
+	color:$white;
+}
+
+.bg-img {
+	font-size: 1.5em;
+  background: linear-gradient( rgba(255, 255, 255, .2), rgba(255, 255, 255, 1)), url('http://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg'); background-position:center center; background-size: cover; repeat-style:no-repeat;
+}
+.subtext {
+	text-transform: uppercase;
+	color:$black;
+	opacity:.5
 }
