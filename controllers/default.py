@@ -9,15 +9,16 @@
 #########################################################################
 
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
 
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
+    db.people.name.label = "What's your name?"
+
+    row = db(db.people.user_id == auth.user_id).select().first()
+    db.people.user_id.readable = db.people.user_id.writable = False
+    form = SQLFORM(db.people, record=row)
+    if form.process().accepted:
+        session.flash = "Welcome, %s!" % form.vars.name
+        redirect(URL('default', 'people'))
+    return dict(form=form)
 
 
 def user():
@@ -63,12 +64,6 @@ def test():
     return dict(experiences_list=experiences_list, form=form)
 
 
-def chat1():
-    form = SQLFORM(db.experiences)
-    experiences_list = db(db.experiences).select()
-
-    return dict(experiences_list=experiences_list, form=form)
-
 def reset():
     db(db.experiences.id > 0).delete()
     db(db.users.id > 0).delete()
@@ -78,7 +73,7 @@ def reset():
 
 def people():
     db.people.name.lable = "Name"
-    q = (db.poeple.id != auth.user_id)
+    q = (db.people.id != auth.user_id)
     links = [dict(header='Click to chat',
                   body = lambda r:A(I(_class='fa fa-comments'), 'Chat', _class='btn btn-primary btn-lg outline',
                                     _href=URL('default', 'chat', args=[r.user_id])))]
@@ -132,3 +127,7 @@ def chat():
 
     title = "Chat with %s" % other.name
     return dict(title=title, grid=grid, form=form, back_button=back_button)
+
+def store_message(form):
+    form.vars.msg_id = str(db2.textblob.insert(mytext = form.vars.msg_id))
+

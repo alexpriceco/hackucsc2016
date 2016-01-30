@@ -184,3 +184,49 @@ success!
 success!
 success!
 success!
+timestamp: 2016-01-30T10:34:24.684385
+CREATE TABLE textblob(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    mytext TEXT
+);
+success!
+timestamp: 2016-01-30T10:44:41.951226
+CREATE TABLE people(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-01-30T10:44:41.958759
+CREATE TABLE messages(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user0 INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    user1 INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    sender INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    msg_time TIMESTAMP,
+    msg_id TEXT
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
