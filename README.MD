@@ -12,6 +12,8 @@ Hey Guys, so we are using web2py, you can download everything you need here:
 
 Web2py: http://www.web2py.com/examples/static/web2py_src.zip
 
+Python: download : https://www.python.org/download/releases/2.6.9/
+
 Pycharm: Recommended, but not required.  Install PyCharm professional edition. 
 
 Go here: https://confluence.jetbrains.com/display/PYH/Previous+PyCharm+Releases
