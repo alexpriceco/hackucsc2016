@@ -6,7 +6,7 @@ $blue: #0074D9;
 $aqua: #7FDBFF;
 $teal: #39CCCC;
 $olive: #3D9970;
-$green: #2ECC40;
+$green: #9AC26F;
 $lime: #01FF70;
 $yellow: #FFDC00;
 $orange: #FF851B;
@@ -34,7 +34,7 @@ $google-red: #D50F25;
 
 
 /* IMPORTS */
-//@import 'fontawesome/font-awesome.scss';
+@import 'fontawesome/font-awesome.scss';
 /* ======= */
 
 /* MAIN STYLES */
@@ -48,6 +48,7 @@ body {
 	color: $black;
 }
 .button {
+	@inlude transition100ms();
 	box-sizing: border-box;
 	padding:1em;
 	margin:.5em;
@@ -55,6 +56,7 @@ body {
 	text-align:center;
 	display: inline;
 	border-radius: 5px;
+	cursor:pointer;
 }
 .v-center {
 	display: table-cell;
@@ -90,16 +92,21 @@ body {
 	color:$gray;
 }
 .button-active {
-	background-color: $olive;
+	background-color: $green;
+	color:$white;
+}
+.button-active:hover {
+	background-color: darken($green, 10%)
 }
 .bg-img {
-	height:50vh;
+	height:45vh;
 }
 input {
 	display: block;
+	text-align: center;
 	@inlude transition100ms();
 	margin: 0 auto;
-	padding:1em;
+	padding:1.2em 1em;
 	border-radius: 5px;
 	background-color:lighten($silver, 5%);
 	border:0;
@@ -120,14 +127,25 @@ textarea, input { outline: none; }
 	background-color:$fb-blue;
 	color:$white;
 }
+.facebook:hover {
+	background-color:lighten($fb-blue, 10%);
+}
 .google {
 	background-color:$google-red;
 	color:$white;
 }
+.google:hover {
+	background-color:lighten($google-red, 10%);
+}
 
 .bg-img {
 	font-size: 1.5em;
-  background: linear-gradient( rgba(255, 255, 255, .2), rgba(255, 255, 255, 1)), url('http://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg'); background-position:center center; background-size: cover; repeat-style:no-repeat;
+    background: linear-gradient( rgba(255, 255, 255, .2), 
+    	rgba(255, 255, 255, 1)), 
+    url('http://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg'); 
+    background-position:center center;
+    background-size: cover; 
+    repeat-style:no-repeat;
 }
 .subtext {
 	text-transform: uppercase;

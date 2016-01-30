@@ -3,6 +3,7 @@
 <head>
     <title>Our Walmart - Login</title>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.css">
 </head>
 
 <body>
@@ -11,7 +12,7 @@
        <div class="h-center v-center">
             <span class="subtext">Join a community of</span>
             <h1 style="font-size:2em;text-transform:uppercase">over 500,000</h1>
-            <span class="subtext">Our Walmart members.</span>
+            <span class="subtext">fellow employees.</span>
         </div>
     </section>
 
@@ -19,26 +20,30 @@
         <div class="v-center">
         <div class="v-center-container">
         <div class="v-center h-center">
-            <div class="button facebook">
-                <i class="fa fa-facebook">facebook</i>
-            </div>
-            <div class="button google"><i class="fa fa-google"></i>google</div>
-            <br><br>
-            <div class="small-text">we care about your anonymity</div>
+            <div class="button facebook">&nbsp;&nbsp;&nbsp;<i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;</div>
+            <div class="button google">&nbsp;&nbsp;&nbsp;<i class="fa fa-google"></i>&nbsp;&nbsp;&nbsp;</div>
+            <br><br><br>
+            <div class="small-text">Sign in using Facebook or Google - we care about your anonymity, and don't collect personal information.</div>
         </div>
         </div>
 
-        <br><br><br>
+        <br><br>
+        <hr>
+        <br>
 
         <div class="h-center">
-           <input placeholder="phone # or email" />
+           <input id="username" placeholder="phone # or email" type="text" />
+           <br>
+           <div class="small-text">Use a phone number or email address to log in. We store language information and chats using info.</div>
+
         </div>
 
-        <div class="button button-full button-bottom button-disabled">
-            <span>submit</span>&nbsp;<i class="fa chevron-right"></i>
+        <div class="button button-full button-bottom button-disabled"> <!-- if input has text, then remove button-disabled and add button-active -->
+            <span>login</span>&nbsp;<i class="fa fa-chevron-right"></i>
         </div>
         </div>
     </section>
 </body>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
 </html>
