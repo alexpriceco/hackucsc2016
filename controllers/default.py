@@ -131,3 +131,23 @@ def chat():
 def store_message(form):
     form.vars.msg_id = str(db2.textblob.insert(mytext = form.vars.msg_id))
 
+def lessons_template():
+    return dict()
+
+def template_menu():
+    return dict()
+
+def template_nest():
+    return dict()
+
+def includes():
+    return dict()
+
+def lessons():
+    return dict()
+
+def ourwalmart():
+    return dict()
+
+def menu():
+    return dict()
