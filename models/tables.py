@@ -35,4 +35,4 @@ db.define_table('user_responses',
 
 )
 
-db.responses.id.readable = db.responses.id.writable = false
+db.user_responses.id.readable = db.user_responses.id.writable = False

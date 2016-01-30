@@ -1,5 +1,5 @@
 (dp1
-S'photo_id'
+S'admin_prefix'
 p2
 (dp3
 S'length'
@@ -10,7 +10,7 @@ p5
 I00
 sS'sortable'
 p6
-I4
+I6
 sS'sql'
 p7
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
@@ -22,7 +22,7 @@ sS'type'
 p10
 S'reference auth_user'
 p11
-ssS'karma_points'
+ssS'lessons_completed'
 p12
 (dp13
 g4
@@ -30,7 +30,7 @@ I512
 sg5
 I00
 sg6
-I5
+I7
 sg7
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
 p14
@@ -39,7 +39,7 @@ I00
 sg10
 S'reference auth_user'
 p15
-ssS'lessons_competed'
+ssS'photo_id'
 p16
 (dp17
 g4
@@ -47,7 +47,7 @@ I512
 sg5
 I00
 sg6
-I6
+I4
 sg7
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
 p18
@@ -56,7 +56,7 @@ I00
 sg10
 S'reference auth_user'
 p19
-ssS'preferred_named'
+ssS'karma_points'
 p20
 (dp21
 g4
@@ -64,7 +64,7 @@ I512
 sg5
 I00
 sg6
-I3
+I5
 sg7
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
 p22
@@ -73,9 +73,49 @@ I00
 sg10
 S'reference auth_user'
 p23
-ssS'user_id'
+ssS'lessons_competed'
 p24
 (dp25
+S'sortable'
+p26
+I6
+sS'sql'
+p27
+S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
+p28
+sS'length'
+p29
+I512
+sS'notnull'
+p30
+I00
+sS'unique'
+p31
+I00
+sS'type'
+p32
+S'reference auth_user'
+p33
+ssS'preferred_named'
+p34
+(dp35
+g4
+I512
+sg5
+I00
+sg6
+I3
+sg7
+S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
+p36
+sg9
+I00
+sg10
+S'reference auth_user'
+p37
+ssS'user_id'
+p38
+(dp39
 g4
 I512
 sg5
@@ -84,15 +124,15 @@ sg6
 I2
 sg7
 S'INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  '
-p26
+p40
 sg9
 I00
 sg10
 S'reference auth_user'
-p27
+p41
 ssS'id'
-p28
-(dp29
+p42
+(dp43
 g4
 I512
 sg5
@@ -101,9 +141,10 @@ sg6
 I1
 sg7
 S'INTEGER PRIMARY KEY AUTOINCREMENT'
-p30
+p44
 sg9
 I00
 sg10
-g28
+S'id'
+p45
 ss.

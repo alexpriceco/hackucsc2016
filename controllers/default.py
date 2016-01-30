@@ -57,6 +57,22 @@ def call():
     """
     return service()
 
+def test():
+    form = SQLFORM(db.experiences)
+    experiences_list = db(db.experiences).select()
+    return dict(experiences_list=experiences_list, form=form)
+
+
 def chat():
-    user_responses = db(db.user_responses).select()
-    return dict(user_responses=user_responses)
+    form = SQLFORM(db.experiences)
+    experiences_list = db(db.experiences).select()
+
+    return dict(experiences_list=experiences_list, form=form)
+
+def reset():
+    db(db.experiences.id > 0).delete()
+    db(db.users.id > 0).delete()
+    db(db.user_responses.id > 0).delete()
+
+    redirect(URL('default', 'index'))
+
