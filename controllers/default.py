@@ -57,4 +57,6 @@ def call():
     """
     return service()
 
-
+def chat():
+    user_responses = db(db.user_responses).select()
+    return dict(user_responses=user_responses)

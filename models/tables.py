@@ -27,7 +27,7 @@ db.define_table('experiences',
 db.experiences.id.readable = db.experiences.id.writable = False
 db.experiences.user_id.readable = db.experiences.user_id.writable = False
 
-db.define_table('responses',
+db.define_table('user_responses',
                 Field('user_id', 'reference users'),
                 Field('q1', ), ##this is where we will put answers to the questions. for now there is nothing
                 ## this is just a place holder
