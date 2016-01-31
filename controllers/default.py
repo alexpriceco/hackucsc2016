@@ -172,6 +172,31 @@ def ourwalmart():
     response.title='Our Walmart'
     return dict()
 
+def logon():
+    return dict()
+#-----------------------------------------------------------------
+# Lessons
+#-----------------------------------------------------------------
+def lesson01():
+    return dict()
+
+def lesson02():
+    return dict()
+
+def lesson03():
+    return dict()
+
+def lesson04():
+    return dict()
+
+def lesson05():
+    return dict()
+
+def lesson06():
+    return dict()
+
+#------------------------------------------------------------------
+
 def test():
     email, password = request.post_vars['email'], request.post_vars['password']
     if not auth.login_bare(email, password):
@@ -279,6 +304,9 @@ def onboard():
     response.title='Join'
     return dict()
 
+def logon():
+    response.title='Log In'
+    return dict()
 
 def person():
     form = SQLFORM(db.person)
