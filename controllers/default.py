@@ -77,14 +77,15 @@ def test1():
 def reset():
     db(db.people.id > 0).delete()
     db(db.messages.id > 0).delete()
-    db(db.testblob.id > 0).delete()
+    #db(db.textblob.id > 0).delete()
     db(db.users.id >0).delete()
     db(db.points.id >0).delete()
     db(db.experiences.id >0).delete()
-    db(db.user_responces.id >0).delete()
+    db(db.user_responses.id >0).delete()
     db(db.story.id >0).delete()
     db(db.stories.id >0).delete()
     db(db.post.id >0).delete()
+    db(db.person.id>0).delete()
 
     redirect(URL('default', 'index'))
 
@@ -209,6 +210,7 @@ def test():
 
     return dict()
 
+@auth.requires_login()
 def stories():
     response.title ="Stories"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
@@ -223,7 +225,6 @@ def stories():
         stories_row['post_number'] = post_number
     return dict(stories_list=stories_list, stories=stories)
 
-@auth.requires_signature()
 @auth.requires_login()
 def create_stories():
 
@@ -233,7 +234,7 @@ def create_stories():
         redirect(URL('default', 'stories', args=[form.vars.id]))
     return dict(form=form)
 
-
+@auth.requires_login()
 def post():
     response.title='Create story'
     stories = db.stories(request.args(0))
