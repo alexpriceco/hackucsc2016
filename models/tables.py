@@ -5,7 +5,7 @@ from datetime import datetime
 # This is a table for all users.
 db.define_table('people',
     Field('user_id', db.auth_user, default=auth.user_id),
-    Field('name', required=True),
+    Field('name', default=auth.user.first_name, required=True),
     Field('description', 'text'),
     )
 
@@ -41,9 +41,9 @@ db2.define_table('textblob',
 
 db.define_table('users',
                 Field('user_id', db.auth_user, default=auth.user_id, writable=False),
-                Field('first_name', default=auth.user.first_name),
-                Field('last_name', default=auth.user.last_name),
-                Field('preferred_named', db.auth_user, default=auth.user_id),
+                Field('first_name', ),
+                Field('last_name', ),
+                Field('preferred_named', ),
                 Field('photo_id', db.auth_user, default=auth.user_id),
                 Field('karma_points', db.auth_user, default=0),
                 Field('admin_prefix', db.auth_user, default=0),
@@ -96,7 +96,7 @@ db.define_table('stories',
     )
 
 db.define_table('post',
-    Field('name',  default=auth.user.first_name, writable=False ),
+    Field('preferred_name', 'reference users'),
     Field('description', 'text'),
     Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
     Field('stories_id', 'reference stories', readable=False, writable=False),
