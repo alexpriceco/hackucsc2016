@@ -102,5 +102,5 @@ db.define_table('post',
     )
 
 db.define_table('person',
-                Field('name'),
+                Field('name', ),
                 )

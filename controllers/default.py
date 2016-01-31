@@ -193,7 +193,7 @@ def test():
 
     return dict()
 
-<<<<<<< Updated upstream
+
 def stories():
     response.title ="stores"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
@@ -267,17 +267,27 @@ def delete_post():
 ## This is a test
 ##-----------------
 
-def display_manual_form():
-    form = SQLFORM(db.person)
-    if form.process(session=None, formname='test').accepted:
-        response.flash = 'form accepted'
-    elif form.errors:
-        response.flash = 'form has errors'
-    else:
-        response.flash = 'please fill the form'
-    # Note: no form instance is passed to the view
-    return dict()
+def on_check(form):
+    if form.vars.name == db(db.person.name=='Jake')._select():
+        form.errors.name = T('User already exists')
+        session.flash = ('Yes')
+        return dict(form=form)
+
+
 
 def onboard():
     return dict()
+
+def person():
+    form = SQLFORM(db.person)
+    if form.process(onvalidation=on_check).accepted:
+        session.flash = T('The data was inserted')
+        #redirect(URL('person'))
+    else:
+        session.flash = ('Nothing happened!')
+
+    rows = db(db.person.name!=None).select()
+    for row in rows:
+        print row.name
+    return dict(form=form)
 
