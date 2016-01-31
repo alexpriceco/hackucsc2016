@@ -1,0 +1,60 @@
+/* VARIABLES */
+$white: #fff;
+$black: #111111;
+$navy: #001f3f;
+$blue: #0074D9;
+$aqua: #7FDBFF;
+$teal: #39CCCC;
+$olive: #3D9970;
+$green: #81ba3b;
+$lime: #01FF70;
+$yellow: #FFDC00;
+$orange: #FF851B;
+$red: #FF4136;
+$maroon: #85144b;
+$fuchsia: #F012BE;
+$purple: #B10DC9;
+$gray: #AAAAAA;
+$silver: #DDDDDD;
+
+$fb-blue: #3b5998;
+$google-red: #D50F25;
+
+/* ======= */
+
+
+/* MIXINS */
+@mixin transition {
+    -webkit-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -moz-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -o-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}
+@mixin delay($nsec) {
+	-webkit-animation-delay: $nsec;
+}
+/* ======= */
+
+
+/* IMPORTS */
+@import 'main.scss';
+/* ======= */
+
+/* MAIN STYLES */
+.lesson section {
+	height:100vh;
+	div {
+		text-align: left;
+	}
+}
+.lesson section:first-child {
+	height:80vh;
+}
+
+ul {
+	padding:1em;
+	margin: 1em 0;
+	background-color: lighten($silver, 7%);
+	border-left: $green;
+	list-style-type: none;
+}
