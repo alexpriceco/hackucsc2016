@@ -10,6 +10,10 @@
 
 def index():
 
+
+    return dict()
+
+def chat_test():
     db.people.name.label = "What's your name?"
 
     row = db(db.people.user_id == auth.user_id).select().first()
@@ -19,6 +23,7 @@ def index():
         session.flash = "Welcome, %s!" % form.vars.name
         redirect(URL('default', 'people'))
     return dict(form=form)
+
 
 
 def user():
@@ -86,8 +91,6 @@ def people():
 
 def chat():
     """This page enables you to chat with another person."""
-    back_button = A(' Back', _class='btn btn-primary btn-lg outline',
-                    _href=URL('default', 'people', user_signature=True))
     # Let us read the record telling us who is the other person.
     other = db(db.people.user_id == request.args(0)).select().first()
     logger.info("I am %r, chatting with %r" % (auth.user_id, other))
@@ -126,7 +129,7 @@ def chat():
         redirect(URL('default', 'chat', args=[other.user_id]))
 
     title = "Chat with %s" % other.name
-    return dict(title=title, grid=grid, form=form, back_button=back_button)
+    return dict(title=title, grid=grid, form=form)
 
 def store_message(form):
     form.vars.msg_id = str(db2.textblob.insert(mytext = form.vars.msg_id))
@@ -150,4 +153,7 @@ def ourwalmart():
     return dict()
 
 def menu():
+    return dict()
+
+def help():
     return dict()
