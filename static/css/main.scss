@@ -121,6 +121,13 @@ a:not(.noformat):hover {
 .button-active:hover {
 	background-color: darken($green, 10%)
 }
+.disabled {
+	cursor:not-allowed;
+	pointer-events: none;
+}
+.menu-item.disabled * {
+	opacity:.5
+}
 input {
 	display: block;
 	text-align: center;

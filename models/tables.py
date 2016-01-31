@@ -70,9 +70,37 @@ db.experiences.user_id.readable = db.experiences.user_id.writable = False
 
 db.define_table('user_responses',
                 Field('user_id', 'reference users'),
-                Field('q1', ), ##this is where we will put answers to the questions. for now there is nothing
+                Field('l1_q1', ), ##this is where we will put answers to the questions. for now there is nothing
                 ## this is just a place holder
-                Field('qn', ),
+                Field('l1_q2', ),
+                Field('l1_q3', ),
+                Field('l1_q4', ),
+                Field('l1_q5', ),
+                Field('l2_q1', ),
+                Field('l2_q2', ),
+                Field('l2_q3', ),
+                Field('l2_q4', ),
+                Field('l2_q5', ),
+                Field('l3_q1', ),
+                Field('l3_q2', ),
+                Field('l3_q3', ),
+                Field('l3_q4', ),
+                Field('l3_q5', ),
+                Field('l4_q1', ),
+                Field('l4_q2', ),
+                Field('l4_q3', ),
+                Field('l4_q4', ),
+                Field('l4_q5', ),
+                Field('l5_q1', ),
+                Field('l5_q2', ),
+                Field('l5_q3', ),
+                Field('l5_q4', ),
+                Field('l5_q5', ),
+                Field('l6_q1', ),
+                Field('l6_q2', ),
+                Field('l6_q3', ),
+                Field('l6_q4', ),
+                Field('l6_q5', ),
 
 )
 
@@ -88,7 +116,7 @@ db.define_table('story',
                 )
 
 db.define_table('stories',
-    Field('Kind', requires=IS_IN_SET(['Discrimination', 'Workplace_Issue', 'Wage', 'Safety',
+    Field('Kind', requires=IS_IN_SET(['Discrimination', 'Workplace Issue', 'Wage', 'Safety',
                                                   'Health', 'Protection', 'Wage/hours/scheduling' ]),),
     Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
     Field('posting_time', 'datetime', readable=False, writable=False, default=datetime.utcnow()),
@@ -96,7 +124,7 @@ db.define_table('stories',
     )
 
 db.define_table('post',
-    Field('preferred_name', 'reference users'),
+    Field('preferred_name', ),
     Field('description', 'text'),
     Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
     Field('stories_id', 'reference stories', readable=False, writable=False),

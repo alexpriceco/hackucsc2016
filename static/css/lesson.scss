@@ -50,3 +50,17 @@ $google-red: #D50F25;
 .lesson section:first-child {
 	height:80vh;
 }
+
+ul {
+	padding:1em;
+	padding-left:2em;
+	margin: 1em 0;
+	margin-left:0;
+	background-color: lighten($silver, 7%);
+	border-left: $green;
+    list-style-position: outside;
+}
+.question {
+	padding-left:.8em;
+	border-left:6px solid $silver
+}

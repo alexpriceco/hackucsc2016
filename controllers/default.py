@@ -260,6 +260,9 @@ def create_post():
     if form.process().accepted:
         session.flash = "Your story has been added!"
         redirect(URL('default', 'post', args=[request.args(0)]))
+    else:
+        session.flash = "ERROR"
+
     return dict(form=form)
 
 
