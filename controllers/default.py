@@ -93,7 +93,7 @@ def people():
     """
     Gives the person a table displaying all the people, to search.
     """
-    response.title = "Stories"
+    response.title = "Chat"
     db.people.name.label = "Name"
     # Creates a list of other people, other than myself.
     q = (db.people.id != auth.user_id)
@@ -216,7 +216,7 @@ def test():
 
     return dict()
 
-@auth.requires_login()
+
 def stories():
     response.title ="Stories"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
@@ -231,7 +231,7 @@ def stories():
         stories_row['post_number'] = post_number
     return dict(stories_list=stories_list, stories=stories)
 
-@auth.requires_login()
+
 def create_stories():
 
     form = SQLFORM(db.stories)
@@ -240,7 +240,7 @@ def create_stories():
         redirect(URL('default', 'stories', args=[form.vars.id]))
     return dict(form=form)
 
-@auth.requires_login()
+
 def post():
     response.title='Create story'
     stories = db.stories(request.args(0))
@@ -250,8 +250,7 @@ def post():
 
 
 
-@auth.requires_login()
-@auth.requires_signature()
+
 def create_post():
     response.title='Create story'
     stories_id = request.args(0)
@@ -263,8 +262,7 @@ def create_post():
         redirect(URL('default', 'post', args=[request.args(0)]))
     return dict(form=form)
 
-@auth.requires_login()
-@auth.requires_signature()
+
 def edit_post():
     response.title='Edit story'
     stories_id = request.args(0)
@@ -277,8 +275,7 @@ def edit_post():
         redirect(URL('default', 'post', args=[stories_id]))
     return dict(form=form)
 
-@auth.requires_login()
-@auth.requires_signature()
+
 def delete_post():
     response.title='Delete story'
     stories_id = request.args(0)
@@ -306,13 +303,7 @@ def onboard():
     return dict()
 
 
-def onboard():
-    response.title='Join'
-    return dict()
 
-def logon():
-    response.title='Log In'
-    return dict()
 
 def person():
     form = SQLFORM(db.person)
