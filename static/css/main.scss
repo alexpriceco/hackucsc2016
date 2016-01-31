@@ -128,7 +128,7 @@ input {
 	margin: 0 auto;
 	padding:1.2em 1em;
 	border-radius: 5px;
-	background-color:lighten($silver, 5%);
+	background-color:lighten($silver, 3%);
 	border:0;
 	width: 70%;
 	font-family: sans-serif;
@@ -188,7 +188,7 @@ nav > a {
 	display:absolute;
 }
 nav a, nav a i, nav h1 {
-	color: darken($green, 16%);
+	color: darken($green, 20%);
 }
 nav a:hover i {
 	color: $black;
