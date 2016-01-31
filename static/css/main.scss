@@ -200,3 +200,31 @@ h1, h2 {
 .menu-item:nth-of-type(2), .lesson:nth-of-type(2) { @include delay(.4s) }
 .menu-item:nth-of-type(3), .lesson:nth-of-type(3) { @include delay(.6s) }
 .menu-item:nth-of-type(4), .lesson:nth-of-type(4) { @include delay(.8s) }
+
+.btn-round {
+    background-color: $google-red;
+    @include transition;
+    border-radius: 999em;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    line-height: 1;
+    font-size: 36px;
+    position: fixed;
+    cursor: pointer;
+    bottom:15px;
+    right:15px;
+}
+.btn-round:hover, .btn-round:active {
+	background-color: darken($google-red, 5%)
+}
+.btn-round span {
+    position: absolute;
+     left: 0;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: -22px;
+    color: #FFF;
+}
