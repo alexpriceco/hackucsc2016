@@ -11,12 +11,15 @@
 
 	{{include 'default/top-nav.html'}}
         
-{{for stories in stories_list:}}
-    <div class="mylist">
-        <h1>{{=A(stories['Kind'], _href=URL('default', 'post', args=[stories.id]) )}}</h1><br>
-    </div>
-{{pass}}
+	{{for stories in stories_list:}}
+	    <div class="mylist">
+	        <h1>{{=A(stories['Kind'], _href=URL('default', 'post', args=[stories.id]))}}</h1><br>
+	    </div>
+	{{pass}}
 
-<a href="{{=URL('default', 'create_stories', args=[request.args(0)], user_signature=True)}}"><div class="btn-round"><span>+</span></div></a>
+	<a href="{{=URL('default', 'create_stories', args=[request.args(0)], user_signature=True)}}">
+		<div class="btn-round"><span>+</span></div>
+	</a>
+
 </body>
 </html>
