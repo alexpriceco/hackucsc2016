@@ -254,6 +254,40 @@ def delete_post():
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
 
+<<<<<<< HEAD
+=======
+
+
+##-----------------
+## This is a test
+##-----------------
+
+def on_check(form):
+    if form.vars.name == db(db.person.name=='Jake')._select():
+        form.errors.name = T('User already exists')
+        session.flash = ('Yes')
+        return dict(form=form)
+
+
+
+>>>>>>> origin/peter
 def onboard():
     response.title='Join'
     return dict()
+<<<<<<< HEAD
+=======
+
+def person():
+    form = SQLFORM(db.person)
+    if form.process(onvalidation=on_check).accepted:
+        session.flash = T('The data was inserted')
+        #redirect(URL('person'))
+    else:
+        session.flash = ('Nothing happened!')
+
+    rows = db(db.person.name!=None).select()
+    for row in rows:
+        print row.name
+    return dict(form=form)
+
+>>>>>>> origin/peter

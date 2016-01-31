@@ -101,3 +101,6 @@ db.define_table('post',
     Field('posting_time', 'datetime', readable=False, writable=False, default=datetime.utcnow())
     )
 
+db.define_table('person',
+                Field('name', ),
+                )

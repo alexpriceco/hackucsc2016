@@ -37,10 +37,20 @@
 </body>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript">
+    console.log('javascript');
     $(document).ready(function() {
         $('#username').keypress(function() {
-          if ($('#username').val() != '') {
-            console.log("has content");
+            var valid=false;
+            console.log($('#username').val());
+            if(($('#username').val()).length>9)
+            {
+                //console.log("checked email")
+                valid = true;
+            }
+
+          if (valid) {
+              console.log('validated');
+              $('.button-bottom').removeClass('button-disabled').addClass('button-active');
           }
         })
     });
