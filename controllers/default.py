@@ -193,6 +193,7 @@ def test():
 
     return dict()
 
+<<<<<<< Updated upstream
 def stories():
     response.title ="stores"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
@@ -261,6 +262,7 @@ def delete_post():
     redirect(URL('default', 'post', args=[stories_id]))
 
 
+
 ##-----------------
 ## This is a test
 ##-----------------
@@ -275,3 +277,7 @@ def display_manual_form():
         response.flash = 'please fill the form'
     # Note: no form instance is passed to the view
     return dict()
+
+def onboard():
+    return dict()
+
