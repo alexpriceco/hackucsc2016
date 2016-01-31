@@ -169,7 +169,7 @@ def lessons():
     return dict()
 
 def ourwalmart():
-    response.title='Our Walmart'
+    response.title='Call to Action'
     return dict()
 
 def logon():
