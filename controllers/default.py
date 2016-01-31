@@ -260,3 +260,18 @@ def delete_post():
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
 
+
+##-----------------
+## This is a test
+##-----------------
+
+def display_manual_form():
+    form = SQLFORM(db.person)
+    if form.process(session=None, formname='test').accepted:
+        response.flash = 'form accepted'
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill the form'
+    # Note: no form instance is passed to the view
+    return dict()
