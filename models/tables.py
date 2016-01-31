@@ -116,7 +116,7 @@ db.define_table('story',
                 )
 
 db.define_table('stories',
-    Field('Kind', requires=IS_IN_SET(['Discrimination', 'Workplace_Issue', 'Wage', 'Safety',
+    Field('Kind', requires=IS_IN_SET(['Discrimination', 'Workplace Issue', 'Wage', 'Safety',
                                                   'Health', 'Protection', 'Wage/hours/scheduling' ]),),
     Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
     Field('posting_time', 'datetime', readable=False, writable=False, default=datetime.utcnow()),
@@ -124,7 +124,7 @@ db.define_table('stories',
     )
 
 db.define_table('post',
-    Field('preferred_name', 'reference users'),
+    Field('preferred_name', ),
     Field('description', 'text'),
     Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
     Field('stories_id', 'reference stories', readable=False, writable=False),

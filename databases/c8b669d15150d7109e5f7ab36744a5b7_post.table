@@ -72,12 +72,12 @@ I00
 sg16
 I2
 sg17
-S'INTEGER REFERENCES users (id) ON DELETE CASCADE  '
+S'CHAR(512)'
 p28
 sg19
 I00
 sg20
-S'reference users'
+S'string'
 p29
 ssS'posting_time'
 p30
