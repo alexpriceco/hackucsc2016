@@ -150,6 +150,7 @@ def chat():
     return dict(title=title, grid=grid, form=form)
 
 
+
 def lessons_template():
     return dict()
 
@@ -160,18 +161,23 @@ def template_nest():
     return dict()
 
 def includes():
+    response.title='includes'
     return dict()
 
 def lessons():
+    response.title='Lessons'
     return dict()
 
 def ourwalmart():
+    response.title='ourwalmart'
     return dict()
 
 def menu():
+    response.title='menu'
     return dict()
 
 def help():
+    response.title='help'
     return dict()
 
 def test():
@@ -188,7 +194,7 @@ def test():
     return dict()
 
 def stories():
-
+    response.title ="stores"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
     stories = db.stories(request.args(0))
     now= datetime.utcnow()
@@ -253,3 +259,4 @@ def delete_post():
     db(db.post.id == request.args(1)).delete()
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
+
