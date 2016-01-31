@@ -254,8 +254,7 @@ def delete_post():
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
 
-<<<<<<< HEAD
-=======
+
 
 
 ##-----------------
@@ -270,12 +269,11 @@ def on_check(form):
 
 
 
->>>>>>> origin/peter
+
 def onboard():
     response.title='Join'
     return dict()
-<<<<<<< HEAD
-=======
+
 
 def person():
     form = SQLFORM(db.person)
@@ -290,4 +288,3 @@ def person():
         print row.name
     return dict(form=form)
 
->>>>>>> origin/peter
