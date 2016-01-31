@@ -70,9 +70,37 @@ db.experiences.user_id.readable = db.experiences.user_id.writable = False
 
 db.define_table('user_responses',
                 Field('user_id', 'reference users'),
-                Field('q1', ), ##this is where we will put answers to the questions. for now there is nothing
+                Field('l1_q1', ), ##this is where we will put answers to the questions. for now there is nothing
                 ## this is just a place holder
-                Field('qn', ),
+                Field('l1_q2', ),
+                Field('l1_q3', ),
+                Field('l1_q4', ),
+                Field('l1_q5', ),
+                Field('l2_q1', ),
+                Field('l2_q2', ),
+                Field('l2_q3', ),
+                Field('l2_q4', ),
+                Field('l2_q5', ),
+                Field('l3_q1', ),
+                Field('l3_q2', ),
+                Field('l3_q3', ),
+                Field('l3_q4', ),
+                Field('l3_q5', ),
+                Field('l4_q1', ),
+                Field('l4_q2', ),
+                Field('l4_q3', ),
+                Field('l4_q4', ),
+                Field('l4_q5', ),
+                Field('l5_q1', ),
+                Field('l5_q2', ),
+                Field('l5_q3', ),
+                Field('l5_q4', ),
+                Field('l5_q5', ),
+                Field('l6_q1', ),
+                Field('l6_q2', ),
+                Field('l6_q3', ),
+                Field('l6_q4', ),
+                Field('l6_q5', ),
 
 )
 
