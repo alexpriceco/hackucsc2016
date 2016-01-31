@@ -193,6 +193,7 @@ def test():
 
     return dict()
 
+<<<<<<< Updated upstream
 def stories():
     response.title ="stores"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
@@ -260,3 +261,7 @@ def delete_post():
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
 
+=======
+def onboard():
+    return dict()
+>>>>>>> Stashed changes

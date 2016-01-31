@@ -117,9 +117,6 @@ a:not(.noformat):hover {
 .button-active:hover {
 	background-color: darken($green, 10%)
 }
-.bg-img {
-	height:45vh;
-}
 input {
 	display: block;
 	text-align: center;
@@ -158,10 +155,11 @@ textarea, input { outline: none; }
 }
 
 .bg-img {
+	height:45vh;
 	font-size: 1.5em;
     background: linear-gradient( rgba(255, 255, 255, .2), 
     	rgba(255, 255, 255, 1)), 
-    url('http://imgsv.imaging.nikon.com/lineup/lens/zoom/normalzoom/af-s_dx_18-140mmf_35-56g_ed_vr/img/sample/sample1_l.jpg'); 
+    url('../images/people.png'); 
     background-position:center center;
     background-size: cover; 
     repeat-style:no-repeat;
