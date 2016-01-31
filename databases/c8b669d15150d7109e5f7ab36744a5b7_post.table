@@ -38,61 +38,16 @@ sg9
 I00
 sg10
 S'reference auth_user'
-<<<<<<< HEAD
-p25
-ssS'name'
-p26
-(dp27
-S'sortable'
-p28
-I2
-sS'sql'
-p29
-S'CHAR(512)'
-p30
-sS'length'
-p31
-I512
-sS'notnull'
-p32
-I00
-sS'unique'
-p33
-I00
-sS'type'
-p34
-S'string'
-p35
-ssS'preferred_name'
-p36
-(dp37
-g14
-=======
 p15
 ssS'preferred_name'
 p16
 (dp17
 g4
->>>>>>> fcc349335373975ffe4411fd955100cd69ff24c4
 I512
 sg5
 I00
 sg6
 I2
-<<<<<<< HEAD
-sg17
-S'INTEGER REFERENCES users (id) ON DELETE CASCADE  '
-p38
-sg19
-I00
-sg20
-S'reference users'
-p39
-ssS'posting_time'
-p40
-(dp41
-g14
-=======
 sg7
 S'CHAR(512)'
 p18
@@ -105,7 +60,6 @@ ssS'posting_time'
 p20
 (dp21
 g4
->>>>>>> fcc349335373975ffe4411fd955100cd69ff24c4
 I512
 sg5
 I00
@@ -113,61 +67,19 @@ sg6
 I6
 sg7
 S'TIMESTAMP'
-<<<<<<< HEAD
-p42
-sg19
-=======
 p22
 sg9
->>>>>>> fcc349335373975ffe4411fd955100cd69ff24c4
 I00
 sg10
 S'datetime'
-<<<<<<< HEAD
-p43
-ssS'id'
-p44
-(dp45
-g14
-I512
-sg15
-I00
-sg16
-I1
-sg17
-S'INTEGER PRIMARY KEY AUTOINCREMENT'
-p46
-sg19
-I00
-sg20
-S'id'
-p47
-ssS'stories_id'
-p48
-(dp49
-g14
-=======
 p23
 ssS'id'
 p24
 (dp25
 g4
->>>>>>> fcc349335373975ffe4411fd955100cd69ff24c4
 I512
 sg5
 I00
-<<<<<<< HEAD
-sg16
-I5
-sg17
-S'INTEGER REFERENCES stories (id) ON DELETE CASCADE  '
-p50
-sg19
-I00
-sg20
-S'reference stories'
-p51
-=======
 sg6
 I1
 sg7
@@ -194,5 +106,4 @@ I00
 sg10
 S'reference stories'
 p30
->>>>>>> fcc349335373975ffe4411fd955100cd69ff24c4
 ss.

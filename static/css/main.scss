@@ -235,3 +235,11 @@ h1, h2 {
     margin-top: -22px;
     color: #FFF;
 }
+.update {
+	padding:2em;
+}
+.date {
+	color:darken($gray, 10%);
+	font-weight:400;
+	text-transform:uppercase
+}
