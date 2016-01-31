@@ -177,21 +177,27 @@ def logon():
 # Lessons
 #-----------------------------------------------------------------
 def lesson01():
+    response.title='Discrimination'
     return dict()
 
 def lesson02():
+    response.title='Workplace issues'
     return dict()
 
 def lesson03():
+    response.title='Wages, hours, schedules'
     return dict()
 
 def lesson04():
+    response.title='Safety'
     return dict()
 
 def lesson05():
+    response.title='Health'
     return dict()
 
 def lesson06():
+    response.title='Protection'
     return dict()
 
 #------------------------------------------------------------------
