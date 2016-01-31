@@ -2,7 +2,9 @@
 <html>
 
 <head>
-<title>Our Walmart {{=response.title}}</title>
+	<title>Our Walmart - {{=response.title}}</title>
+	<link rel="stylesheet" type="text/css" href="{{=URL('static','css/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{=URL('static','css/lesson.css')}}">
 </head>
 
 <body>
@@ -10,38 +12,45 @@
 	{{include 'default/top-nav.html'}}
 
 	<div class="lesson">
-		<section>
-		    <span>The National Labor Relations Act protects you when acting collectively to address workplace issues. Anytime you join together to improve workplace conditions, you have the law on your side.</span>
-		    <div class="button button-active">Next</div>
+		<section class="v-center-container h-center">
+			<div class="v-center">
+			    <div class="thin-text">The National Labor Relations Act protects you when acting collectively to address workplace issues. Anytime you join together to improve workplace conditions, you have the law on your side.</div>
+			    <div class="button button-active">Next</div>
+		    </div>
 		</section>
-		<section>
-		    <span>You have the right to attempt to form a union where none currently exists, or to decertify a union that has lost the support of employees.
-			Examples of employee rights include:
-			Forming, or attempting to form, a union in your workplace;
-			Joining a union whether the union is recognized by your employer or not;
-			Assisting a union in organizing your fellow employees;
-			Refusing to do any or all of these things.
-			To be fairly represented by a union</span>
-		    <div class="button button-active">Next</div>
+		<section class="v-center-container h-center">
+			<div class="v-center">
+			    <div class="thin-text">You have the right to attempt to form a union where none currently exists, or to decertify a union that has lost the support of employees.
+				Examples of employee rights include:
+				<ul>
+					<li>Forming, or attempting to form, a union in your workplace</li>
+					<li>Joining a union whether the union is recognized by your employer or not</li>
+					<li>Assisting a union in organizing your fellow employees</li>
+					<li>Refusing to do any or all of these things</li>
+				</ul>
+				To be fairly represented by a union</div>
+			    <div class="button button-active">Next</div>
+		    </div>
 		</section>
-		<section>
-		    <span>Concerted activities are also protected under the National Labor Relations Act.
-			A few examples of protected concerted activities are:
-			Two or more employees addressing their employer about improving their pay.
-			Two or more employees discussing work-related issues beyond pay, such as safety concerns, with each other.
-			An employee speaking to an employer on behalf of one or more co-workers about improving workplace conditions.
-			</span>
-		    <div class="button button-active">Next</div>
+		<section class="v-center-container h-center">
+			<div class="v-center text-left">
+			    <div class="thin-text">Concerted activities are also protected under the National Labor Relations Act.
+				A few examples of protected concerted activities are:
+				Two or more employees addressing their employer about improving their pay.
+				Two or more employees discussing work-related issues beyond pay, such as safety concerns, with each other.
+				An employee speaking to an employer on behalf of one or more co-workers about improving workplace conditions.
+				</div>
+			    <div class="button button-active">Next</div>
+		    </div>
 		</section>
-		<section>
-		    <span>
-			You are protected when engaging in concerted activity as a single employee, as well as if you are acting on the authority of other employees, bringing group complaints to the employer’s attention, trying to induce group action, or seeking to prepare for group action.
-			<span>Q: Have you ever organized or coordinated complaints to induce group action?</span>
-		    <div class="button button-active">Next</div>
-		</section>
-		<section class="question">
-		    <span>snippet here</span>
-		    <div class="button button-active">Next</div>
+		<section class="v-center-container h-center">
+			<div class="v-center">
+			    <div class="thin-text">
+				You are protected when engaging in concerted activity as a single employee, as well as if you are acting on the authority of other employees, bringing group complaints to the employer’s attention, trying to induce group action, or seeking to prepare for group action.
+				<div class="thin-text">Q: Have you ever organized or coordinated complaints to induce group action?</div>
+			    <br><br>
+				<div class="button button-active">Yes</div><div class="button button-active">No</div>
+		    </div>
 		</section>
 	</div>
 
