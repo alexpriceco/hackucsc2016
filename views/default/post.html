@@ -1,0 +1,15 @@
+<h4>{{=stories['Kind']}}'s Posts</h4>
+
+{{for post in post_list:}}
+    <div class="mylist">
+        <h5><b>{{=post['name']}}</b></h5>
+        {{=post['description']}}<br><br>
+        Updated: {{=stories['posting_time'].strftime('%m/%d/%Y')}} at
+                 {{=stories['posting_time'].strftime('%H:%M')}}
+
+        {{if auth.user_id == post.author:}} <br><br>
+            {{=A(I(_class='fa fa-pencil'), _href=URL('default', 'edit_post', args=[post.stories_id, post.id], user_signature=True))}}
+            {{=A(I(_class='fa fa-trash'), _href=URL('default', 'delete_post', args=[post.stories_id, post.id], user_signature=True))}}
+        {{pass}}
+    </div>
+{{pass}}

@@ -84,3 +84,20 @@ db.user_responses.id.readable = db.user_responses.id.writable = False
 db.define_table('story',
                 Field('user_id',)
                 )
+
+db.define_table('stories',
+    Field('Kind', requires=IS_IN_SET(['Discrimination', 'Workplace_Issue', 'Wage', 'Safety',
+                                                  'Health', 'Protection', 'Wage/hours/scheduling' ]),),
+    Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
+    Field('posting_time', 'datetime', readable=False, writable=False, default=datetime.utcnow()),
+    Field('post_number', 'integer', readable=False, writable=False),
+    )
+
+db.define_table('post',
+    Field('name', ),
+    Field('description', 'text'),
+    Field('author', db.auth_user, default=auth.user_id, readable=False, writable=False),
+    Field('stories_id', "reference stories", readable=False, writable=False),
+    Field('posting_time', 'datetime', readable=False, writable=False, default=datetime.utcnow())
+    )
+

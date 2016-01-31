@@ -1,0 +1,11 @@
+
+        {{=A('Create Board', _class='btn btn-primary btn-lg outline', _href=URL('default', 'create_stories', args=[request.args(0)], user_signature=True))}}
+
+{{for stories in stories_list:}}
+    <div class="mylist">
+        <h1>{{=A(stories['Kind'], _href=URL('default', 'post', args=[stories.id]) )}}</h1><br>
+        <h2>{{=stories['post_number']}} new posts today<br>
+        Updated: {{=stories['posting_time'].strftime('%m/%d/%Y')}} at
+                 {{=stories['posting_time'].strftime('%H:%M')}}</h2>
+    </div>
+{{pass}}

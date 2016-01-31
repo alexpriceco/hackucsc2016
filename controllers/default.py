@@ -8,6 +8,9 @@
 ## - download is for downloading files uploaded in the db (does streaming)
 #########################################################################
 
+from datetime import timedelta
+from gluon.tools import prettydate
+
 def index():
 
 
@@ -63,16 +66,23 @@ def call():
     """
     return service()
 
-def test():
+def test1():
     form = SQLFORM(db.experiences)
     experiences_list = db(db.experiences).select()
     return dict(experiences_list=experiences_list, form=form)
 
 
 def reset():
-    db(db.experiences.id > 0).delete()
-    db(db.users.id > 0).delete()
-    db(db.user_responses.id > 0).delete()
+    db(db.people.id > 0).delete()
+    db(db.messages.id > 0).delete()
+    db(db.testblob.id > 0).delete()
+    db(db.users.id >0).delete()
+    db(db.points.id >0).delete()
+    db(db.experiences.id >0).delete()
+    db(db.user_responces.id >0).delete()
+    db(db.story.id >0).delete()
+    db(db.stories.id >0).delete()
+    db(db.post.id >0).delete()
 
     redirect(URL('default', 'index'))
 
@@ -163,3 +173,83 @@ def menu():
 
 def help():
     return dict()
+
+def test():
+    email, password = request.post_vars['email'], request.post_vars['password']
+    if not auth.login_bare(email, password):
+        db.auth_user.insert(
+          first_name=None,
+          last_name=None,
+          email=email,
+          password=db.auth_user.password.requires[0](password)[0]
+                            )
+    auth.login_bare(email, password)
+
+    return dict()
+
+def stories():
+
+    stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
+    stories = db.stories(request.args(0))
+    now= datetime.utcnow()
+    yesterday = now - timedelta(days=1)
+    for stories_row in stories_list:
+
+
+
+        post_number = db((db.post.posting_time > yesterday) & (db.post.stories_id == stories_row['id'])).count()
+        stories_row['post_number'] = post_number
+    return dict(stories_list=stories_list, stories=stories)
+
+@auth.requires_signature()
+@auth.requires_login()
+def create_stories():
+
+    form = SQLFORM(db.stories)
+    if form.process().accepted:
+        session.flash = "Stories posted!"
+        redirect(URL('default', 'stories', args=[form.vars.id]))
+    return dict(form=form)
+
+
+def post():
+    stories = db.stories(request.args(0))
+    post_list = db(db.post.stories_id ==stories).select(orderby=~db.post.posting_time)
+
+    return dict(post_list=post_list, stories=stories)
+
+
+
+@auth.requires_login()
+@auth.requires_signature()
+def create_post():
+
+    stories_id = request.args(0)
+    form = SQLFORM(db.post)
+    db(db.stories.id == stories_id).update(posting_time=datetime.utcnow())
+    form.vars.stories_id = stories_id
+    if form.process().accepted:
+        session.flash = "Your story has been added!"
+        redirect(URL('default', 'post', args=[request.args(0)]))
+    return dict(form=form)
+
+@auth.requires_login()
+@auth.requires_signature()
+def edit_post():
+    stories_id = request.args(0)
+    post_row = db.post(request.args(1))
+    form = SQLFORM(db.post, record=post_row)
+    db(db.stories.id == stories_id).update(posting_time=datetime.utcnow())
+    form.vars.posting_time = datetime.utcnow()
+    if form.process().accepted:
+        session.flash = "Post edited!"
+        redirect(URL('default', 'post', args=[stories_id]))
+    return dict(form=form)
+
+@auth.requires_login()
+@auth.requires_signature()
+def delete_post():
+    stories_id = request.args(0)
+    db(db.post.id == request.args(1)).delete()
+    session.flash = "Post deleted!"
+    redirect(URL('default', 'post', args=[stories_id]))
