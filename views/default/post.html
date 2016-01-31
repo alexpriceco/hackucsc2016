@@ -1,5 +1,9 @@
 <h4>{{=stories['Kind']}}'s Posts</h4>
 
+        {{=A('back', _class='btn btn-primary btn-lg outline', _href=URL('default', 'stories'))}}
+
+{{=A('Create Post', _class='btn btn-primary btn-lg outline', _href=URL('default', 'create_post', args=[stories.id], user_signature=True))}}
+
 {{for post in post_list:}}
     <div class="mylist">
         <h5><b>{{=post['name']}}</b></h5>

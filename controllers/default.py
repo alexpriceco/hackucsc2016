@@ -255,6 +255,7 @@ def delete_post():
     redirect(URL('default', 'post', args=[stories_id]))
 
 
+
 ##-----------------
 ## This is a test
 ##-----------------
@@ -265,6 +266,12 @@ def on_check(form):
         session.flash = ('Yes')
         return dict(form=form)
 
+
+
+
+def onboard():
+    response.title='Join'
+    return dict()
 
 
 def onboard():
