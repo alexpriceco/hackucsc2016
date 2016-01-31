@@ -77,17 +77,25 @@ def reset():
     redirect(URL('default', 'index'))
 
 def people():
-    db.people.name.lable = "Name"
+    """
+    Gives the person a table displaying all the people, to search.
+    """
+    db.people.name.label = "Name"
+    # Creates a list of other people, other than myself.
     q = (db.people.id != auth.user_id)
     links = [dict(header='Click to chat',
-                  body = lambda r:A(I(_class='fa fa-comments'), 'Chat', _class='btn btn-primary btn-lg outline',
+                 body = lambda r: A(I(_class='fa fa-comments'), 'Chat', _class='btn btn-success',
                                     _href=URL('default', 'chat', args=[r.user_id])))]
     grid = SQLFORM.grid(q,
-                        links = links,
+                        links=links,
                         editable=False,
                         details=False,
                         csv=False)
     return dict(grid=grid)
+
+
+def store_message(form):
+    form.vars.msg_id = str(db2.textblob.insert(mytext = form.vars.msg_id))
 
 def chat():
     """This page enables you to chat with another person."""
@@ -131,8 +139,6 @@ def chat():
     title = "Chat with %s" % other.name
     return dict(title=title, grid=grid, form=form)
 
-def store_message(form):
-    form.vars.msg_id = str(db2.textblob.insert(mytext = form.vars.msg_id))
 
 def lessons_template():
     return dict()
