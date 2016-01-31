@@ -19,23 +19,14 @@
     <section class="signup v-center-container" style="min-height:40vh;">
         <div class="v-center">
         <div class="v-center-container">
-        <div class="v-center h-center">
-            <div class="button facebook">&nbsp;&nbsp;&nbsp;<i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;</div>
-            <div class="button google">&nbsp;&nbsp;&nbsp;<i class="fa fa-google"></i>&nbsp;&nbsp;&nbsp;</div>
-            <br><br><br>
-            <div class="small-text">Sign in using Facebook or Google - we care about your anonymity, and don't collect personal information.</div>
-        </div>
-        </div>
-
-        <br><br>
-        <hr>
-        <br>
 
         <div class="h-center">
-           <input id="username" placeholder="phone # or email" type="text" />
+           <div class="thin-text">To protect your anonymity, we use your mobile phone number to make sure that you're you.</div>
+           <br><br>
+           <input id="username" placeholder="(123) 456-7762" type="text" />
            <br>
-           <div class="small-text">Use a phone number or email address to log in. We store language information and chats using info.</div>
-           <a href="{{=URL('menu.html')}}">quicklink</a>
+           <div class="small-text thin-text"></div>
+           <a href="{{=URL('onboard.html')}}">Already a member? Click me!</a>
         </div>
 
         <a href="{{=URL('lessons.html')}}"><div class="button button-full button-bottom button-disabled"> <!-- if input has text, then remove button-disabled and add button-active -->

@@ -12,8 +12,10 @@ from datetime import timedelta
 from gluon.tools import prettydate
 
 def index():
+    return dict()
 
-
+def menu():
+    response.title = "Our Walmart"
     return dict()
 
 def chat_test():
@@ -90,6 +92,7 @@ def people():
     """
     Gives the person a table displaying all the people, to search.
     """
+    response.title = "Stories"
     db.people.name.label = "Name"
     # Creates a list of other people, other than myself.
     q = (db.people.id != auth.user_id)
@@ -160,24 +163,12 @@ def template_menu():
 def template_nest():
     return dict()
 
-def includes():
-    response.title='includes'
-    return dict()
-
 def lessons():
     response.title='Lessons'
     return dict()
 
 def ourwalmart():
-    response.title='ourwalmart'
-    return dict()
-
-def menu():
-    response.title='menu'
-    return dict()
-
-def help():
-    response.title='help'
+    response.title='Our Walmart'
     return dict()
 
 def test():
@@ -193,9 +184,8 @@ def test():
 
     return dict()
 
-<<<<<<< Updated upstream
 def stories():
-    response.title ="stores"
+    response.title ="Stories"
     stories_list = db().select(db.stories.ALL, orderby=~db.stories.posting_time)
     stories = db.stories(request.args(0))
     now= datetime.utcnow()
@@ -220,6 +210,7 @@ def create_stories():
 
 
 def post():
+    response.title='Create story'
     stories = db.stories(request.args(0))
     post_list = db(db.post.stories_id ==stories).select(orderby=~db.post.posting_time)
 
@@ -230,7 +221,7 @@ def post():
 @auth.requires_login()
 @auth.requires_signature()
 def create_post():
-
+    response.title='Create story'
     stories_id = request.args(0)
     form = SQLFORM(db.post)
     db(db.stories.id == stories_id).update(posting_time=datetime.utcnow())
@@ -243,6 +234,7 @@ def create_post():
 @auth.requires_login()
 @auth.requires_signature()
 def edit_post():
+    response.title='Edit story'
     stories_id = request.args(0)
     post_row = db.post(request.args(1))
     form = SQLFORM(db.post, record=post_row)
@@ -256,12 +248,12 @@ def edit_post():
 @auth.requires_login()
 @auth.requires_signature()
 def delete_post():
+    response.title='Delete story'
     stories_id = request.args(0)
     db(db.post.id == request.args(1)).delete()
     session.flash = "Post deleted!"
     redirect(URL('default', 'post', args=[stories_id]))
 
-=======
 def onboard():
+    response.title='Join'
     return dict()
->>>>>>> Stashed changes

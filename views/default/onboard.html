@@ -8,13 +8,55 @@
 
 <body>
 
-	<nav class="v-center-container">
-		<h1 class="v-center h-center animated fadeIn">Get started</h1>
-	</nav>
-
+	{{include 'default/basic-nav.html'}}
     
+    <br><br><br>
+
+    <div class="v-center-container" style="min-height:30vh">
+        <div class="v-center h-center">
+            <div class="thin-text h-center">
+            <h2>Become a member</h2><br>
+            As you learn about your rights, and connect with fellow coworkers, we'd like to keep you as anonymous as you'd like. Add your preferred name below.</div><br>
+           <input id="prefname" placeholder="Johnny Appleseed" type="text" />
+           <br>
+           <div class="small-text thin-text h-center">This is the name that other members will see, if you are in a chat, or post a story.</div>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="v-center-container" style="min-height:30vh">
+        <div class="v-center h-center">
+            <div class="thin-text h-center">
+            What's the secret code?</div><br>
+           <input id="secretcode" placeholder="123456" type="text" />
+           <br>
+           <div class="small-text thin-text h-center">You should have received this by text.</div>
+        </div>
+    </div>
+
+    <a href="{{=URL('menu.html')}}">
+        <div class="button button-full button-bottom button-disabled">
+            <span>I'm ready!</span>&nbsp;<i class="fa fa-chevron-right"></i>
+        </div>
+    </a>
     
 </body>
+
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#prefname').keypress(function() {
+          if (($('#prefname').val() != '') && ($('#secretcode').val() != '')) {
+            $('.button-bottom').removeClass('button-disabled').addClass('button-active');
+          }
+        });
+        $('#secretcode').keypress(function() {
+          if (($('#prefname').val() != '') && ($('#secretcode').val() != '')) {
+            $('.button-bottom').removeClass('button-disabled').addClass('button-active');
+          }
+        });
+    });
+</script>
 
 </html>
