@@ -8,7 +8,10 @@
 </head>
 
 <body>
-        {{=A('Create Story', _class='btn btn-primary btn-lg outline', _href=URL('default', 'create_stories', args=[request.args(0)], user_signature=True))}}
+
+	{{include 'default/top-nav.html'}}
+        
+    {{=A('Create Story', _class='btn btn-primary btn-lg outline', _href=URL('default', 'create_stories', args=[request.args(0)], user_signature=True))}}
 
 {{for stories in stories_list:}}
     <div class="mylist">
