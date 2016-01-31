@@ -50,3 +50,11 @@ $google-red: #D50F25;
 .lesson section:first-child {
 	height:80vh;
 }
+
+ul {
+	padding:1em;
+	margin: 1em 0;
+	background-color: lighten($silver, 7%);
+	border-left: $green;
+	list-style-type: none;
+}

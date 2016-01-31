@@ -5,6 +5,7 @@
 	<title>Our Walmart - {{=response.title}}</title>
 	<link rel="stylesheet" type="text/css" href="{{=URL('static','css/animate.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{=URL('static','css/lesson.css')}}">
+	{{include 'default/smooth.html'}}
 </head>
 
 <body>
@@ -12,13 +13,13 @@
 	{{include 'default/top-nav.html'}}
 
 	<div class="lesson">
-		<section class="v-center-container h-center">
+		<section class="v-center-container h-center" id="one">
 			<div class="v-center">
 			    <div class="thin-text">The National Labor Relations Act protects you when acting collectively to address workplace issues. Anytime you join together to improve workplace conditions, you have the law on your side.</div>
-			    <div class="button button-active">Next</div>
+			    <a data-scroll href="#two"><div class="button button-active">Next</div></a>
 		    </div>
 		</section>
-		<section class="v-center-container h-center">
+		<section class="v-center-container h-center" id="two">
 			<div class="v-center">
 			    <div class="thin-text">You have the right to attempt to form a union where none currently exists, or to decertify a union that has lost the support of employees.
 				Examples of employee rights include:
@@ -29,10 +30,10 @@
 					<li>Refusing to do any or all of these things</li>
 				</ul>
 				To be fairly represented by a union</div>
-			    <div class="button button-active">Next</div>
+			    <a data-scroll href="#three"><div class="button button-active">Next</div></a>
 		    </div>
 		</section>
-		<section class="v-center-container h-center">
+		<section class="v-center-container h-center" id="three">
 			<div class="v-center text-left">
 			    <div class="thin-text">Concerted activities are also protected under the National Labor Relations Act.
 				A few examples of protected concerted activities are:
@@ -40,7 +41,7 @@
 				Two or more employees discussing work-related issues beyond pay, such as safety concerns, with each other.
 				An employee speaking to an employer on behalf of one or more co-workers about improving workplace conditions.
 				</div>
-			    <div class="button button-active">Next</div>
+			    <a data-scroll href="#two"><div class="button button-active">Next</div></a>
 		    </div>
 		</section>
 		<section class="v-center-container h-center">
