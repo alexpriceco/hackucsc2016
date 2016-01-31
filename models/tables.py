@@ -5,7 +5,7 @@ from datetime import datetime
 # This is a table for all users.
 db.define_table('people',
     Field('user_id', db.auth_user, default=auth.user_id),
-    Field('name', default=auth.user.first_name, required=True),
+    Field('name', required=True),
     Field('description', 'text'),
     )
 
