@@ -271,6 +271,10 @@ def onboard():
     response.title='Join'
     return dict()
 
+def logon():
+    response.title='Log In'
+    return dict()
+
 def person():
     form = SQLFORM(db.person)
     if form.process(onvalidation=on_check).accepted:
