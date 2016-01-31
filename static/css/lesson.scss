@@ -46,9 +46,6 @@ $google-red: #D50F25;
 	div {
 		text-align: left;
 	}
-	.button:nth-of-type(1) {
-		margin-left:10%;
-	}
 }
 .lesson section:first-child {
 	height:80vh;
@@ -62,4 +59,8 @@ ul {
 	background-color: lighten($silver, 7%);
 	border-left: $green;
     list-style-position: outside;
+}
+.question {
+	padding-left:.8em;
+	border-left:6px solid $silver
 }
