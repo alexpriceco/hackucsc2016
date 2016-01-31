@@ -256,7 +256,6 @@ def delete_post():
 
 
 
-
 ##-----------------
 ## This is a test
 ##-----------------
@@ -268,6 +267,11 @@ def on_check(form):
         return dict(form=form)
 
 
+
+
+def onboard():
+    response.title='Join'
+    return dict()
 
 
 def onboard():
