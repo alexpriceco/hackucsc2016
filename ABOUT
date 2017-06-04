@@ -1,2 +1,35 @@
-Write something about this app.
-Developed with web2py.
+Developed with web2py framework for the UCSC 2016 Hackathon.
+
+The project was developed for the OUR Walmart Union with guidance from Andrea Dehlendorf.
+We participated in the Labor Tech category. 
+
+
+Below is the story:
+
+Inspiration
+Wage, discrimination, and other basic rights are affecting and interfering with the livelihoods of millions of Walmart workers across the nation and globally. We want to help unite members of this community to overcome the barriers of social economic injustice, and workplace malpractice.
+
+What it does
+OUR Walmart Community is a portal that merges three features: education and information about basic rights, connecting people of similar experiences, and outreach to further involve community members in calls to action.
+
+How we built it
+We used a framework called web2py that allows us to develop dynamic web content that can be tested live in a localhost. We have a team of 5 student engineers that developed databases, controllers, CSS, and HTML to form a mobile web application.
+
+Challenges we ran into
+Git was especially difficult due to the numerous issues we had handling multiple branches commits, merges, and syncs.
+
+Accomplishments that we're proud of
+Our concept is especially developed for ease of use and attempts to capture the texture of an intuitive, pragmatic tool. We are accessible to all users with access to the Web and hope to capture user immersion.
+
+What we learned
+We learned that we'd like to use a different framework for our next project.
+
+What's next for Our Walmart Community
+A chat implementation that matches and categorizes people based on their experiences and stories so other users can speak with each other directly and privately about their concerns.
+
+Built With:
+javascript
+jquery
+ractive
+web2py
+python
